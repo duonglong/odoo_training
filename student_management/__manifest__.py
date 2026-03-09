@@ -14,7 +14,8 @@
     'category': 'Education',
     'depends': ['base'],
     'data': [
-
+        'security/ir.model.access.csv',
+        'views/student_management.xml',
     ],
     'demo': [
     ],
