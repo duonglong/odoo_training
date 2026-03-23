@@ -16,9 +16,14 @@
             <field name="model">student.student</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button string="create random student" name="create_random_student" type="object"/>
+                    </header>
                     <group>
                         <group>
                             <field name="name"/>
+                            <field name="date_of_birth"/>
+                            <field name="age"/>
                             <field name="class_room_id"/>
                         </group>
                         <group>
