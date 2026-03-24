@@ -16,6 +16,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/student_management.xml',
+        'views/class_room.xml',
+        'views/menus.xml',
     ],
     'demo': [
     ],

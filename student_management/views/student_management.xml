@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <list>
                     <field name="name"/>
+                    <field name="age"/>
                     <field name="class_room_id"/>
                 </list>
             </field>
@@ -39,8 +40,6 @@
             <field name="view_mode">list,form</field>
         </record>
 
-        <menuitem name="Student management" id="student_management_root"/>
-        <menuitem id="student_management_student" name="Students" action="student_action"
-              parent="student_management_root"/>
+
     </data>
 </odoo>
