@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="authentication_validator" model="auth.jwt.validator">
+            <field name="name">authentication</field>
+            <field name="audience">alluser</field>
+            <field name="issuer">odoo</field>
+            <field name="signature_type">secret</field>
+            <field name="secret_algorithm">HS256</field>
+            <field name="secret_key">HEY_THERE_UPDATE_ME</field>
+            <field name="user_id_strategy">static</field>
+            <field name="static_user_id" ref="base.user_admin"/>
+            <field name="partner_id_strategy">email</field>
+            <field name="partner_id_required" eval="False"/>
+            <field name="cookie_enabled" eval="False"/>
+            <field name="cookie_name">authorization</field>
+        </record>
+    </data>
+</odoo>

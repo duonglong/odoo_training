@@ -21,11 +21,13 @@
     ],
     'demo': [
     ],
+    'assets': {
+        'web.assets_tests': [
+            'student_management/static/src/js/tours/student_test_tour.js',
+        ],
+    },
     'installable': True,
     'application': False,
-    'assets': {
-
-    },
     'author': 'LongDT',
     'license': 'LGPL-3',
 }

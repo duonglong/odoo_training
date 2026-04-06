@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <record model="fastapi.endpoint" id="endpoint_student">
+        <field name="name">Student</field>
+        <field name="app">student</field>
+        <field name="root_path">/student</field>
+        <field name="user_id" ref="base.user_admin" />
+    </record>
+</odoo>
