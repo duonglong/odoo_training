@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+  <t t-name="odoo_view_custom.StarRatingField" owl="1">
+    <div
+      class="o_star_rating d-inline-flex align-items-center gap-1"
+      t-att-class="{ 'o_star_rating_readonly': props.readonly }"
+      t-att-aria-label="'Rating: ' + currentValue + ' out of ' + maxStars"
+      role="group"
+    >
+      <t t-foreach="stars" t-as="star" t-key="star.index">
+
+        <span
+          t-if="!props.readonly"
+          class="o_star_rating_star fa"
+          t-att-class="{
+            'fa-star  text-warning': star.filled,
+            'fa-star-o text-muted': !star.filled,
+          }"
+          t-on-click="() => this.onStarClick(star.index)"
+          t-on-keydown="(ev) => this.onStarKeyDown(ev, star.index)"
+          tabindex="0"
+          role="button"
+          t-att-aria-label="'Set rating to ' + star.index"
+          t-att-aria-pressed="star.filled ? 'true' : 'false'"
+        />
+
+        <span
+          t-else=""
+          class="o_star_rating_star fa"
+          t-att-class="{
+            'fa-star  text-warning': star.filled,
+            'fa-star-o text-muted': !star.filled,
+          }"
+          aria-hidden="true"
+        />
+
+      </t>
+
+      <small
+        t-if="props.readonly and currentValue"
+        class="ms-1 text-muted"
+        t-esc="currentValue + '/' + maxStars"
+      />
+    </div>
+  </t>
+
+</templates>

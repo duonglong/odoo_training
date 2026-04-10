@@ -1,0 +1,33 @@
+.o_star_rating {
+    line-height: 1;
+}
+
+.o_star_rating .o_star_rating_star {
+    font-size: 1.15rem;
+    transition: transform 0.1s ease, color 0.1s ease;
+    cursor: pointer;
+}
+
+.o_star_rating .o_star_rating_star:hover,
+.o_star_rating .o_star_rating_star:focus {
+    transform: scale(1.25);
+    outline: none;
+}
+
+.o_star_rating .o_star_rating_star:focus-visible {
+    outline: 2px solid var(--primary);
+    border-radius: 2px;
+}
+
+.o_star_rating.o_star_rating_readonly .o_star_rating_star {
+    cursor: default;
+    pointer-events: none;
+}
+
+.o_star_rating.o_star_rating_readonly .o_star_rating_star:hover {
+    transform: none;
+}
+
+.o_form_view .o_star_rating .o_star_rating_star {
+    font-size: 1.35rem;
+}

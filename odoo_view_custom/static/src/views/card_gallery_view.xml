@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="odoo_view_custom.CardGalleryRenderer" owl="1">
+        <div class="o_card_gallery_grid p-3">
+            <div class="o_list_renderer d-none"/>
+            <t t-if="records.length === 0">
+                <div class="o_card_gallery_empty d-flex align-items-center justify-content-center text-muted">
+                    <span>No records found</span>
+                </div>
+            </t>
+            <t t-foreach="records" t-as="record" t-key="record.id">
+                <div class="o_product_card" t-on-click="() => this.onCardClick(record)" tabindex="0">
+                    <div class="o_product_card_image_wrapper">
+                        <img class="o_product_card_image"
+                             t-att-src="getImageSrc(record)"
+                             t-att-alt="record.data.name"/>
+                    </div>
+                    <div class="o_product_card_body">
+                        <div class="o_product_card_name" t-esc="record.data.name"/>
+                        <div class="o_product_card_footer d-flex justify-content-between align-items-center">
+                            <span t-esc="formatPrice(record)"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+
+    <!-- Custom Buttons Template -->
+    <t t-name="odoo_view_custom.CardGalleryButtons" owl="1">
+        <button type="button" class="btn btn-secondary ms-1" t-on-click="onClickMyCustomButton">
+            My Custom Button
+        </button>
+    </t>
+    
+</templates>

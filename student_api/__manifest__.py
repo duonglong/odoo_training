@@ -7,7 +7,7 @@
     Student API
     """,
     'category': 'Education',
-    'depends': ['student_management', 'fastapi'],
+    'depends': ['student_management', 'fastapi', 'queue_job'],
     'data': [
         'data/jwt_validator.xml',
         'data/fastapi_endpoint.xml'

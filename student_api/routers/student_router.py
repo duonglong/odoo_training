@@ -30,13 +30,13 @@ async def create_student(
         studentData: StudentCreateInfo,
         env: Annotated[Environment, Depends(auth_jwt_authenticated_odoo_env)]
 ) -> StudentInfo:
-    student = env["student.student"].create({
+    env["student.student"].with_delay().create({
         'name': studentData.name,
         'date_of_birth': studentData.date_of_birth,
     })
     return StudentInfo(
-        id=student.id,
-        name=student.name or None,
-        date_of_birth=student.date_of_birth or None,
-        age=student.age or None
+        id=123,
+        name=None,
+        date_of_birth=None,
+        age= None
     )
