@@ -7,7 +7,7 @@ class Student(models.Model):
     _name = 'student.student'
 
     name = fields.Char(string='Name')
-    date_of_birth = fields.Date(string='Date of Birth')
+    date_of_birth = fields.Date(string='DoB')
     age = fields.Integer()
     class_room_id = fields.Many2one(string='Class Room', comodel_name='student.classroom')
     subject_ids = fields.Many2many('subject.subject', string='Subjects')
