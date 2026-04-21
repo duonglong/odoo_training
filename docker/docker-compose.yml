@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    # image: odoo:18.0
+    restart: unless-stopped
+    ports:
+      - "8069:8069"               # main web interface
+      - "8072:8072"               # longpolling / live-chat
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./odoo.conf:/etc/odoo/odoo.conf:ro
+      - ./addons:/mnt/extra-addons
